@@ -14,33 +14,30 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/todos")
 public class TodoController {
     @Autowired
-    TodoRepository todoRepository;
+    TodoService todoService;
 
     @RequestMapping(method = GET)
     public Iterable<Todo> showTodoList() {
-        return todoRepository.findAll();
+        return todoService.findAllList();
     }
 
     @RequestMapping(value = "/{id}", method = GET)
     public Todo showATodo(@PathVariable(value = "id") Long id) {
-        return todoRepository.findOne(id);
+        return todoService.findById(id);
     }
 
     @RequestMapping(method = POST)
     public Todo create(@RequestBody Todo newTodo) {
-        return todoRepository.save(newTodo);
+        return todoService.createNewTodo(newTodo);
     }
 
     @RequestMapping(value = "/{id}" ,method = DELETE)
     public void delete(@PathVariable("id") Long id){
-        todoRepository.delete(id);
+        todoService.delete(id);
     }
 
     @RequestMapping(value = "/{id}" , method = PUT)
     public Todo update(@RequestBody Todo updateTodo, @PathVariable("id") Long id){
-        if(id != updateTodo.getId()){
-            todoRepository.delete(id);
-        }
-        return todoRepository.save(updateTodo);
+        return todoService.updateTodo(updateTodo, id);
     }
 }
