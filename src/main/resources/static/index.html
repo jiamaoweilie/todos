@@ -1,0 +1,32 @@
+<!doctype HTML>
+<html ng-app="TodoApp">
+<head>
+    <mate charset="utf-8"></mate>
+    <title>todos</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+<div class="container" ng-controller="TodoController">
+    <header id="header">
+        <h1>todos</h1>
+        <form id="todoform" class="ng-pristine ng-valid">
+            <input type="text" placeholder="What needs to be done?" ng-model="newTodo" autofocus
+                   class="ng-pristine ng-valid"/>
+            <input type="button" name="add" id="add" value="Add" ng-click="addTodo()" />
+        </form>
+    </header>
+    <ul id="todo-list">
+        <li ng-repeat="todo in todos">{{todo}}</li>
+    </ul>
+
+</div>
+
+<script src="js/lib/angular.js"></script>
+<script src="js/lib/angular-resource.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/todo-controller.js"></script>
+<script src="js/todo-service.js"></script>
+
+</body>
+</html>
