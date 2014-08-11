@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TodoService {
-    @Qualifier("todoRepository")
     @Autowired
     TodoRepository todoRepository;
 

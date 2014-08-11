@@ -4,8 +4,9 @@ app.controller('TodoController', ['$scope', 'TodoService',
 
         $scope.todos = TodoService.query();
 
-        $scope.addTodo = function(){
+        $scope.addTodo = function()
+        {
             TodoService.save({description: $scope.newTodo});
-            $scope.todos = TodoService.query();
+            TodoService.query();
         };
     }]);
