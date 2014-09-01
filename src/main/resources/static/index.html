@@ -12,11 +12,11 @@
         <form id="todoform" class="ng-pristine ng-valid">
             <input type="text" placeholder="What needs to be done?" ng-model="newTodo" autofocus
                    class="ng-pristine ng-valid"/>
-            <input type="button" name="add" id="add" value="Add" ng-click="addTodo()" />
+            <input type="button" name="add" id="add" value="Add" ng-click="add()"/>
         </form>
     </header>
     <ul id="todo-list">
-        <li ng-repeat="todo in todos">{{todo}}</li>
+        <li ng-repeat="todo in todos">{{todo.description}}<button ng-click="delete(todo.id)">delete</button></li>
     </ul>
 
 </div>

@@ -1,6 +1,6 @@
 app.factory('TodoService', ['$resource', function($resource){
-    return $resource('/todos', {}, {
-       'query' : {method: 'GET', isArray: true},
-       'save' :{method:'POST'}
+    return $resource('/todos/:id', {}, {
+        'query' : {method: 'GET', isArray: true},
+        'delete': {method: 'DELETE', params: {id: '@id'}}
     });
 }]);
