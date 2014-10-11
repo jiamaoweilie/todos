@@ -4,21 +4,29 @@
     <mate charset="utf-8"></mate>
     <title>todos</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
 <div class="container" ng-controller="TodoController">
-    <header id="header">
-        <h1>todos</h1>
-        <form id="todoform" class="ng-pristine ng-valid">
-            <input type="text" placeholder="What needs to be done?" ng-model="newTodo" autofocus
-                   class="ng-pristine ng-valid"/>
-            <input type="button" name="add" id="add" value="Add" ng-click="add()"/>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">todos</h1>
+        </div>
+    </div>
+    <div class="row">
+        <form id="todoform">
+            <input type="text" placeholder="What needs to be done?" ng-model="newTodo" autofocus class="ng-valid ng-dirty col-lg-11"/>
+            <input type="button" name="add" id="add" value="add" ng-click="add()" class="col-lg-1"/>
         </form>
-    </header>
+    </div>
     <ul id="todo-list">
-        <li ng-repeat="todo in todos">{{todo.description}}<button ng-click="delete(todo.id)">delete</button></li>
+        <div class="view">
+            <li ng-repeat="todo in todos">{{todo.description}}
+                <button class="bottom-right" ng-click="delete(todo.id)">delete</button>
+            </li>
+        </div>
     </ul>
-
 </div>
 
 <script src="js/lib/angular.js"></script>
