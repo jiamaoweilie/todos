@@ -1,9 +1,0 @@
-todos/Application.class
-todos/repository/TodoRepository.class
-todos/services/UserService.class
-todos/repository/UserRepository.class
-todos/controller/UserController.class
-todos/model/Todo.class
-todos/controller/TodoController.class
-todos/services/TodoService.class
-todos/model/User.class
