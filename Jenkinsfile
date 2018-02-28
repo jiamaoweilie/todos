@@ -10,7 +10,7 @@ pipeline {
         }
         stage('TES1') {
           steps {
-            sh 'HEL'
+            sh 'echo "Testing"'
           }
         }
       }
