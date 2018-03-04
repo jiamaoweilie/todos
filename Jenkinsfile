@@ -18,6 +18,7 @@ pipeline {
     stage('Test 1') {
       steps {
         sh 'echo "hello"'
+        sleep 1000
       }
     }
   }
