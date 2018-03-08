@@ -19,7 +19,26 @@ pipeline {
     stage('Test 1') {
       steps {
         sh 'echo "hello"'
-        sleep 1000
+        sleep 2
+      }
+    }
+    stage('Test 4') {
+      parallel {
+        stage('Test 4') {
+          steps {
+            sleep 2
+          }
+        }
+        stage('Test 5') {
+          steps {
+            sh 'echo "testing 111"'
+          }
+        }
+      }
+    }
+    stage('Test 6') {
+      steps {
+        echo 'hello world'
       }
     }
   }
