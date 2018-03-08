@@ -19,7 +19,7 @@ pipeline {
     stage('Test 1') {
       steps {
         sh 'echo "hello"'
-        sleep 2
+        sleep 1000000
       }
     }
     stage('Test 4') {
