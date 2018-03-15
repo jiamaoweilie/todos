@@ -12,7 +12,7 @@ pipeline {
         stage('Test 3 ') {
           steps {
             sh 'echo "hello"'
-            input(message: 'aaaa', submitterParameter: 'aaa')
+            input(message: 'aaaa', submitterParameter: 'aaa', id: 'int')
           }
         }
       }
