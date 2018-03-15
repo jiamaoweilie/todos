@@ -12,6 +12,7 @@ pipeline {
         stage('Test 3 ') {
           steps {
             sh 'echo "hello"'
+            input 'aaaa'
           }
         }
       }
@@ -19,7 +20,7 @@ pipeline {
     stage('Test 1') {
       steps {
         sh 'echo "hello"'
-        sleep 1000000
+        sleep 1
       }
     }
     stage('Test 4') {
